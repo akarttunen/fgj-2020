@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Asset Store/Demigiant/DOTween.meta
+guid: f6e3b798b0d911544813996c6beaac2e
+=======
 guid: 48d0b78758b6c7642a1287147cf200fa
+>>>>>>> master:Assets/Fonts.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
