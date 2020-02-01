@@ -19,9 +19,9 @@ public class Target : MonoBehaviour
 
     void Die()
     {
+            Instantiate(collectable, new Vector3(transform.position.x, transform.position.y + 5, transform.position.z), Quaternion.identity);
         if(CheckIfDrop())
         {
-            Instantiate(collectable, new Vector3(transform.position.x, transform.position.y + 5, transform.position.z), Quaternion.identity);
         }
         Debug.Log(CheckIfDrop());
         Destroy(gameObject);
