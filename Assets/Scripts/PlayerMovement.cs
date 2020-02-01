@@ -22,6 +22,15 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
+        if(Input.GetButtonDown("Run"))
+        {
+            speed = 24f;
+        }
+        if(Input.GetButtonUp("Run"))
+        {
+            speed = 12f;
+        }
+
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
