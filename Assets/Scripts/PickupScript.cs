@@ -7,9 +7,9 @@ public class PickupScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.tag);
-        if(other.gameObject.CompareTag("Collectable"))
+        if(other.gameObject.CompareTag("Player"))
         {
-            Destroy(other.gameObject);
+            Destroy(gameObject);
         }
     }
 }
