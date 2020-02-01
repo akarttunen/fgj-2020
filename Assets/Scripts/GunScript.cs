@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GunScript : MonoBehaviour
@@ -9,6 +10,7 @@ public class GunScript : MonoBehaviour
     public float fireRate = 15f;
     public float impactForce = 30f;
     public float magazineSize = 30f;
+    public float reloadTime = 2f;
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
@@ -16,20 +18,27 @@ public class GunScript : MonoBehaviour
     public AudioSource audioSourceObj;
     public AudioClip gunShootSound;
     public AudioClip gunReloadSound;
+    public GameObject reloadText;
 
     private float nextTimeToFire = 0f;
+    private float nextTimeToReload = 0f;
     private float bulletsLeft = 0f;
     // Update is called once per frame
     void Update()
     {
-
-        if(Input.GetButton("Fire1") && Time.time >= nextTimeToFire && bulletsLeft < magazineSize) {
+        if(reloadText.activeInHierarchy && Time.time >= nextTimeToReload)
+        {
+            reloadText.SetActive(false);
+        }
+        if(Input.GetButton("Fire1") && Time.time >= nextTimeToFire && bulletsLeft < magazineSize && Time.time >= nextTimeToReload) {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
 
-        if (Input.GetKeyDown(KeyCode.R)) 
+        if (Input.GetKeyDown(KeyCode.R) && Time.time >= nextTimeToReload) 
         {
+            reloadText.SetActive(true);
+            nextTimeToReload = Time.time + reloadTime;
             Reload();
         }
     }
@@ -63,5 +72,6 @@ public class GunScript : MonoBehaviour
     {
         audioSourceObj.PlayOneShot(gunReloadSound);
         bulletsLeft = 0f;
+        
     }
 }
