@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Plugins/DB Upgrades_Store.meta
 guid: 3abcf054b2ae442f783c6243e4c43a24
+=======
+<<<<<<< HEAD
+guid: 734975e89a2bf8343914c483d8e5a1ea
+=======
+guid: 2e2edd94d8cf14adeb3813834a753b94
+>>>>>>> d2eb2d550b1e8e81593344c228a33ed123434816
+>>>>>>> master:Assets/Asset Store/Mtree/SRP.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
