@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour
     public int currentHp;
     public GameObject uiImageContainer;
     public Image[] uiImages;
+    public AudioSource endSound;
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         collectedItems = 0;
         currentHp = 100;
     }
@@ -27,5 +29,9 @@ public class GameManager : MonoBehaviour
         Image currentUIImage = uiImages[collectedItems];
         Debug.Log($"Activating image {currentUIImage.name}");
         currentUIImage.color = new Color(255f, 255f, 255f, 1f);
+    }
+    public void PlayEndSound()
+    {
+        endSound.Play();
     }
 }
