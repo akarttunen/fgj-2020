@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour
     {
         if(collider.tag == "Collectable")
         {
-            gameManager.collectedItems++;
+            gameManager.AddCollectedItemAmount();
         }
     }
 }
