@@ -25,7 +25,8 @@ public class LorryScript : MonoBehaviour
         {
             if (gameManager.collectedItems >= 5)
             {
-                SceneManager.LoadScene(_currentScene.name);
+                // Load Init scene on game over
+                SceneManager.LoadScene("Init");
                 Debug.Log("Noice, collected items amount: " + gameManager.collectedItems);
             }
             else
