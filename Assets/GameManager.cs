@@ -1,24 +1,31 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public int collectedItems;
     public int currentHp;
+    public GameObject uiImageContainer;
+    public Image[] uiImages;
     // Start is called before the first frame update
     void Start()
     {
         collectedItems = 0;
         currentHp = 100;
     }
-    void AddCollectedItemAmount()
+    public void AddCollectedItemAmount()
     {
+        ActivateUIImage();
         collectedItems++;
     }
     void AdjustHpAmount(int amount)
     {
         currentHp += amount;
+    }
+    void ActivateUIImage()
+    {
+        Image currentUIImage = uiImages[collectedItems];
+        Debug.Log($"Activating image {currentUIImage.name}");
+        currentUIImage.color = new Color(255f, 255f, 255f, 1f);
     }
 }
