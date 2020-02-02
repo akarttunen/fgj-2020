@@ -14,7 +14,7 @@ public class GunScript : MonoBehaviour
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
-    public GameObject impactEffect;
+    // public GameObject impactEffect;
     public AudioSource audioSourceObj;
     public AudioClip gunShootSound;
     public AudioClip gunReloadSound;
@@ -63,8 +63,8 @@ public class GunScript : MonoBehaviour
 
             
 
-            GameObject ImpactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(ImpactGO, 2f);
+            // GameObject ImpactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            // Destroy(ImpactGO, 2f);
         };
     }
 
