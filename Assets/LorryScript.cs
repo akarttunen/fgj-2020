@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LorryScript : MonoBehaviour
 {
     public GameManager gameManager;
+    public AudioSource endSound;
     private Scene _currentScene;
 
     private void Start()
@@ -25,6 +26,7 @@ public class LorryScript : MonoBehaviour
         {
             if (gameManager.collectedItems >= 5)
             {
+                gameManager.PlayEndSound();
                 // Load Init scene on game over
                 SceneManager.LoadScene("Init");
                 Debug.Log("Noice, collected items amount: " + gameManager.collectedItems);
