@@ -9,16 +9,14 @@ public class LightController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        flashlight = gameObject.GetComponent("Light");
-        //gameObject.SetActive(false);
+        gameObject.GetComponent<Light>().enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Crouch"))
         {
-            Debug.Log(this.GetComponent<Light>().enabled);
             gameObject.GetComponent<Light>().enabled = !gameObject.GetComponent<Light>().enabled;
         }
     }
