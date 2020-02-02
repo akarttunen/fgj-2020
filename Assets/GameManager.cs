@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public GameObject uiImageContainer;
     public Image[] uiImages;
     public AudioSource endSound;
+    public AudioSource music;
+    public AudioSource newMusic;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,8 @@ public class GameManager : MonoBehaviour
     }
     public void PlayEndSound()
     {
+        music.Stop();
+        newMusic.Play();
         endSound.Play();
     }
 }
